@@ -6,7 +6,7 @@ function App() {
       <header className="navbar">
         <div className="logo">
           <h1>Alex Auto Repair Shop</h1>
-          <p>Reliable Auto Repair in Salinas</p>
+          <p>Local Auto Repair Shop in Salinas, CA</p>
         </div>
 
         <nav>
@@ -25,10 +25,10 @@ function App() {
         <section className="hero">
           <div className="hero-text">
             <p className="eyebrow">Trusted Local Auto Repair Shop</p>
-            <h2>Professional auto repair services to keep your vehicle safe and running smoothly.</h2>
+            <h2>Trusted auto repair in Salinas to keep your vehicle safe, dependable, and ready for the road.</h2>
             <p>
-              We provide dependable repairs, clear communication, and quality workmanship
-              for drivers throughout Salinas and the surrounding area.
+              Our local auto repair shop provides dependable diagnostics, brake service,
+              electrical repairs, and maintenance with clear communication and quality workmanship.
             </p>
 
             <div className="hero-buttons">
@@ -44,13 +44,13 @@ function App() {
           <div className="hero-image">
             <img
               src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=80"
-              alt="Auto repair shop"
+              alt="Alex Auto Repair Shop serving drivers in Salinas, California"
             />
           </div>
         </section>
 
         <section id="services" className="section">
-          <h3>Our Services</h3>
+          <h3>Auto Repair Services in Salinas</h3>
           <div className="card-grid">
             <div className="card">
               <h4>Diagnostics</h4>
@@ -74,7 +74,7 @@ function App() {
             </div>
             <div className="card">
               <h4>Brakes and Rotors</h4>
-              <p>Repair braking systems for safe, smooth, and dependable stopping power.</p>
+              <p>Get dependable diagnostics and brake repair in Salinas for safe, smooth stopping power.</p>
             </div>
           </div>
         </section>
@@ -84,42 +84,42 @@ function App() {
             <div>
               <img
                 src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80"
-                alt="Mechanic working on a vehicle"
+                alt="Technician performing vehicle diagnostics at Alex Auto Repair Shop in Salinas"
                 className="section-image"
               />
             </div>
             <div>
-              <h3>About Us</h3>
+              <h3>About Our Salinas Auto Repair Shop</h3>
               <p>
-                Alex Auto Repair Shop is committed to providing honest service and dependable
-                repairs for every customer who walks through our doors.
+                Alex Auto Repair Shop is a local auto repair shop committed to honest service and
+                dependable repairs for drivers in Salinas and nearby communities.
               </p>
               <p>
-                From routine maintenance to more complex repairs, our team focuses on careful
-                work, straightforward recommendations, and customer service you can count on.
+                From routine maintenance to diagnostics and brake repair in Salinas, our team
+                focuses on careful work, straightforward recommendations, and service you can trust.
               </p>
             </div>
           </div>
         </section>
 
         <section id="gallery" className="section">
-          <h3>Gallery</h3>
+          <h3>Shop Gallery</h3>
           <p className="section-subtext">
-            Take a look at our shop and the kind of vehicles we service.
+            Take a look at our local auto repair shop in Salinas and the vehicles we service.
           </p>
 
           <div className="gallery-grid">
             <img
               src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
-              alt="Vehicle in service bay"
+              alt="Vehicle in a service bay at Alex Auto Repair Shop in Salinas"
             />
             <img
               src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
-              alt="Car being inspected"
+              alt="Car being inspected for local auto repair service in Salinas"
             />
             <img
               src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
-              alt="Vehicle ready after service"
+              alt="Vehicle ready after service at Alex Auto Repair Shop in Salinas"
             />
           </div>
         </section>
@@ -127,8 +127,8 @@ function App() {
         <section id="contact" className="section dark-section">
           <div className="contact-grid">
             <div>
-              <h3>Contact Us</h3>
-              <p>Need diagnostics, repairs, or routine service? We&apos;re here to help.</p>
+              <h3>Contact Our Salinas Auto Repair Shop</h3>
+              <p>Need auto repair in Salinas, from diagnostics to brake service and tune-ups? We&apos;re here to help.</p>
               <p><strong>Phone:</strong>{" "}<a href="tel:+18317710988" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 771-0988</a></p>
               <p><strong>Alternate Phone:</strong>{" "}<a href="tel:+18312626986" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 262-6986</a></p>
               <p><strong>Address:</strong> 341 West Market Street, Salinas, California 93901, United States</p>
