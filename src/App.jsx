@@ -135,6 +135,19 @@ function App() {
               <p><strong>Hours:</strong> Monday–Friday: 8:00 AM – 5:30 PM</p>
               <p><strong>Saturday:</strong> 8:00 AM – 2:30 PM</p>
               <p><strong>Sunday:</strong> By appointment</p>
+
+              <div style={{ marginTop: '24px' }}>
+                <iframe
+                  title="Google Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.747371796063!2d-121.6650572!3d36.68057470000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808df8da8402f3ef%3A0x87b4d7f638a71bb!2s341%20W%20Market%20St%2C%20Salinas%2C%20CA%2093901!5e0!3m2!1sen!2sus!4v1773857626563!5m2!1sen!2sus"
+                  width="100%"
+                  height="350"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
 
             <form className="contact-form">
