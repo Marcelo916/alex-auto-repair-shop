@@ -129,8 +129,8 @@ function App() {
             <div>
               <h3>Contact Us</h3>
               <p>Need diagnostics, repairs, or routine service? We&apos;re here to help.</p>
-              <p><strong>Phone:</strong> (831) 771-0988</p>
-              <p><strong>Alternate Phone:</strong> (831) 262-6986</p>
+              <p><strong>Phone:</strong>{" "}<a href="tel:+18317710988" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 771-0988</a></p>
+              <p><strong>Alternate Phone:</strong>{" "}<a href="tel:+18312626986" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 262-6986</a></p>
               <p><strong>Address:</strong> 341 West Market Street, Salinas, California 93901, United States</p>
               <p><strong>Hours:</strong> Monday–Friday: 8:00 AM – 5:30 PM</p>
               <p><strong>Saturday:</strong> 8:00 AM – 2:30 PM</p>
