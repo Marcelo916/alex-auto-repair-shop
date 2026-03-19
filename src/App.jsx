@@ -1,6 +1,83 @@
+import { useState } from 'react'
 import './App.css'
 
+const initialForm = {
+  name: '',
+  phone: '',
+  message: '',
+}
+
 function App() {
+  const [formData, setFormData] = useState(initialForm)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [submitSuccess, setSubmitSuccess] = useState('')
+
+  function handleInputChange(event) {
+    const { name, value } = event.target
+
+    setFormData((currentFormData) => ({
+      ...currentFormData,
+      [name]: value,
+    }))
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault()
+
+    const trimmedFormData = {
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
+      message: formData.message.trim(),
+    }
+
+    if (!trimmedFormData.name) {
+      setSubmitSuccess('')
+      setSubmitError('Please enter your name.')
+      return
+    }
+
+    if (!trimmedFormData.phone) {
+      setSubmitSuccess('')
+      setSubmitError('Please enter your phone number.')
+      return
+    }
+
+    if (!trimmedFormData.message) {
+      setSubmitSuccess('')
+      setSubmitError('Please enter a short message about your vehicle or repair needs.')
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitError('')
+    setSubmitSuccess('')
+
+    try {
+      const response = await fetch('/api/estimates', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(trimmedFormData),
+      })
+
+      const responseData = await response.json()
+
+      if (!response.ok) {
+        setSubmitError(responseData.error || 'Unable to send your request right now. Please try again.')
+        return
+      }
+
+      setSubmitSuccess(responseData.message || 'Your estimate request was sent successfully.')
+      setFormData(initialForm)
+    } catch {
+      setSubmitError('Unable to connect to the estimate server. Please try again in a moment.')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="site">
       <header className="navbar">
@@ -129,8 +206,8 @@ function App() {
             <div>
               <h3>Contact Our Salinas Auto Repair Shop</h3>
               <p>Need auto repair in Salinas, from diagnostics to brake service and tune-ups? We&apos;re here to help.</p>
-              <p><strong>Phone:</strong>{" "}<a href="tel:+18317710988" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 771-0988</a></p>
-              <p><strong>Alternate Phone:</strong>{" "}<a href="tel:+18312626986" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 262-6986</a></p>
+              <p><strong>Phone:</strong>{' '}<a href="tel:+18317710988" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 771-0988</a></p>
+              <p><strong>Alternate Phone:</strong>{' '}<a href="tel:+18312626986" style={{ textDecoration: 'underline', color: '#4fd1c5' }}>(831) 262-6986</a></p>
               <p><strong>Address:</strong> 341 West Market Street, Salinas, California 93901, United States</p>
               <p><strong>Hours:</strong> Monday–Friday: 8:00 AM – 5:30 PM</p>
               <p><strong>Saturday:</strong> 8:00 AM – 2:30 PM</p>
@@ -150,11 +227,40 @@ function App() {
               </div>
             </div>
 
-            <form className="contact-form">
-              <input type="text" placeholder="Your name" />
-              <input type="tel" placeholder="Phone number" />
-              <textarea placeholder="Tell us how we can help with your vehicle"></textarea>
-              <button type="submit">Send Request</button>
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={handleInputChange}
+                disabled={isSubmitting}
+                aria-label="Your name"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+                value={formData.phone}
+                onChange={handleInputChange}
+                disabled={isSubmitting}
+                aria-label="Phone number"
+              />
+              <textarea
+                name="message"
+                placeholder="Tell us how we can help with your vehicle"
+                value={formData.message}
+                onChange={handleInputChange}
+                disabled={isSubmitting}
+                aria-label="How we can help with your vehicle"
+              ></textarea>
+
+              {submitError ? <p className="form-status form-status-error">{submitError}</p> : null}
+              {submitSuccess ? <p className="form-status form-status-success">{submitSuccess}</p> : null}
+
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending Request...' : 'Send Request'}
+              </button>
             </form>
           </div>
         </section>
